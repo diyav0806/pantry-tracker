@@ -29,6 +29,9 @@ export default function Home() {
   const removeItem = async (item) =>{
     const docRef = doc(collection(firestore, 'inventory'), item);
     const docSnap = await getDoc(docRef); 
+
+    if(docSnap.exist()){
+      const {quantity} = docSnap.data()
   }
 
   useEffect(() => {
